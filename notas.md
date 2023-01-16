@@ -36,3 +36,9 @@
 ```
 'arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/${self:custom.tables.singleTable}/index/index2',
 ```
+## Messaging App Clase 2 Websocket Connect
+
+- Agrego websocket con delete
+- En libs agrego `Cognito.ts`
+- En `serverless.ts` en `environment` agrego `COGNITO_POOL_ID`
+`COGNITO_POOL_ID: { Ref: 'CognitoUserPool' }`
