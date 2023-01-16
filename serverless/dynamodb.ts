@@ -18,6 +18,14 @@ const DynamoResources: AWS['resources']['Resources'] = {
           AttributeName: 'sk',
           AttributeType: 'S',
         },
+        {
+          AttributeName: 'pk2',
+          AttributeType: 'S',
+        },
+        {
+          AttributeName: 'sk2',
+          AttributeType: 'S',
+        },
       ],
 
       KeySchema: [
@@ -37,6 +45,22 @@ const DynamoResources: AWS['resources']['Resources'] = {
             },
             {
               AttributeName: 'sk',
+              KeyType: 'RANGE',
+            },
+          ],
+          Projection: {
+            ProjectionType: 'ALL',
+          },
+        },
+        {
+          IndexName: 'index2',
+          KeySchema: [
+            {
+              AttributeName: 'pk2',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'sk2',
               KeyType: 'RANGE',
             },
           ],
